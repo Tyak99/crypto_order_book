@@ -28,7 +28,7 @@ const DropdownSelect = () => {
 
     return ( 
         <div>
-            <h4> Select currency pair</h4>
+            <h4> Select currency pair </h4>
             <div className='selectDropdown'>
                 <Select options={dropdownOption} onChange={(values) => setValues(values)} />
             </div>
