@@ -3,12 +3,8 @@ import Select from "react-select";
 import axios from 'axios';
 import './asset/dropdown.css';
 
-const DropdownSelect = () => {
-
-    const setValues = (values) => {
-        console.log(values.value)
-    }
-
+const DropdownSelect = ({getCurrencyPair}) => {
+    
     const [dropdownOption, setDropdownOption] = useState([]);
 
     useEffect(() => {
@@ -17,8 +13,8 @@ const DropdownSelect = () => {
             const options = []
             res.data.map(data => {
                 const select = {
-                    value: data.name,
-                    label: data.name
+                    label: data.name,
+                    value: data.url_symbol
                 }
                 options.push(select)
             })
@@ -30,7 +26,7 @@ const DropdownSelect = () => {
         <div>
             <h4> Select currency pair </h4>
             <div className='selectDropdown'>
-                <Select options={dropdownOption} onChange={(values) => setValues(values)} />
+                <Select options={dropdownOption} onChange={(values) => getCurrencyPair(values)} />
             </div>
         </div>
      );

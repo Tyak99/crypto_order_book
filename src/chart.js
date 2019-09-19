@@ -43,8 +43,8 @@ const Chart = (data) => {
 
     return ( 
         <div>
-            <CanvasJSChart options = {options}
-			/>
+            {data.data.asks ? <CanvasJSChart options = {options}
+			/> : <h2> No data to show yet, choose a currency pair from the dropdown </h2>}
         </div>
      );
 }
