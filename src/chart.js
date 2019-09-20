@@ -27,7 +27,7 @@ const Chart = (data) => {
         theme: "light1",
         animationEnabled: true,
         title: {
-            text: "Currency Update"
+            text: "Order Book Chart"
         },
         data: [
             {
